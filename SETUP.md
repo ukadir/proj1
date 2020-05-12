@@ -25,6 +25,10 @@ This step is given to you on the write-up, but in summary, you have to clone the
 Everything from this point on is the same as what you would do if you were working in a devcontainer, but here’s a concise guide to compiling and running your code. 
 
 **3. Compiling your code**
+Before trying to compile on ieng6, run the following command to activate a newer compiler:
+
+`source scl_source enable devtoolset-7`
+
 Go into the root directory of your project:
 
 `cd <name-of-the-project-directory>`
@@ -47,6 +51,14 @@ To run your unit tests, in your project root directory, run
 ```bash
 make
 make test
+```
+
+**6. Downloading the code coverage report**
+To download the code coverage report from ieng6, you can use `rsync`, `rcp` or `git`. If you want to use git to download your coverage report, you'll have to edit the first line of the `.gitignore` file in your project like so:
+
+```bash
+build/*
+!build/code_coverage/
 ```
 
 More information about testing is provided in the README.
