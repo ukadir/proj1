@@ -1,8 +1,9 @@
+#include <gtest/gtest.h>
+
 #include <iostream>
 #include <string>
 #include <vector>
 
-#include <gtest/gtest.h>
 #include "HCTree.hpp"
 
 using namespace std;
@@ -15,12 +16,17 @@ class SimpleHCTreeFixture : public ::testing::Test {
   public:
     SimpleHCTreeFixture() {
         // initialization code here
+        cout << "CONSTRUCTOR==============c";
         vector<unsigned int> freqs(256);
         freqs['a'] = 2;
         freqs['b'] = 3;
         tree.build(freqs);
     }
 };
+
+/*TEST_F(SimpleHCTreeFixture, TEST_HCBUILD) {
+    HCTree hc = new SimpleHCTreeFixture();
+}*/
 
 TEST_F(SimpleHCTreeFixture, TEST_ENCODE) {
     ostringstream os;

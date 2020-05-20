@@ -13,7 +13,19 @@
 
 /* TODO: add pseudo compression with ascii encoding and naive header
  * (checkpoint) */
-void pseudoCompression(const string& inFileName, const string& outFileName) {}
+void pseudoCompression(const string& inFileName, const string& outFileName) {
+    vector<unsigned int> freqs;
+    char c;
+    ifstream is(inFileName);
+
+    ofstream outfile;
+    outfile.open(outFileName);
+    for (int index = 0; index < 256; index++) {
+        /*is.get(c);
+        freqs.push_back(c - '0');*/
+        outfile << '0' << endl;
+    }
+}
 
 /* TODO: True compression with bitwise i/o and small header (final) */
 void trueCompression(const string& inFileName, const string& outFileName) {}
